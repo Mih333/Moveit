@@ -90,7 +90,7 @@ Moveit.prototype.set = function(options) {
         var context = this;
             this.el.addEventListener('transitionend', function(e) {
         				if (options.callback || options.follow) { 
-                if (e.propertyName === 'stroke-dashoffset') {
+                if (e.propertyName === 'stroke-dashoffset' || e.propertyName === 'stroke-dasharray') {
                   if(options.follow) {
                   	context.el.style.transition = context.el.style.WebkitTransition = 'none';
                     context.setupPath({
